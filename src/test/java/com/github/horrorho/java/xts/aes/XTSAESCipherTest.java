@@ -52,7 +52,7 @@ public class XTSAESCipherTest {
                 .processDataUnit(data, 0, data.length, data, 0, n);
 
         assertEquals(testVector.id(), bytes, data.length);
-        assertArrayEquals(testVector.id(), data, testVector.ctx());
+        assertArrayEquals(testVector.id(), testVector.ctx(), data);
     }
 
     private Object[] parametersForTestEncryption() {
@@ -71,7 +71,7 @@ public class XTSAESCipherTest {
                 .processDataUnit(data, 0, data.length, data, 0, n);
 
         assertEquals(testVector.id(), bytes, data.length);
-        assertArrayEquals(testVector.id(), data, testVector.ptx());
+        assertArrayEquals(testVector.id(), testVector.ptx(), data);
     }
 
     private Object[] parametersForTestDecryption() {
